@@ -1,0 +1,20 @@
+{
+  "name": "winston-email",
+  "description": "An email transport for winston",
+  "author": "Pierre Herveou <pgherveou@gmail.com>",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pgherveou/winston-email"
+  },
+  "keywords": ["logging", "winston", "email"],
+  "dependencies": {
+    "nodemailer": "*",
+    "winston"   : "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*"
+  },
+
+  "main": "./lib/index.js"
+}
