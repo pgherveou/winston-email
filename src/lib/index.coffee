@@ -1,4 +1,4 @@
-path       = require 'path'
+util       = require 'util'
 winston    = require 'winston'
 nodemailer = require 'nodemailer'
 
@@ -19,15 +19,11 @@ class winston.transports.Email extends winston.Transport
             pass: options.auth.pass
 
 
-  log: (level, msg = '', meta = {}, cb) ->
+  log: (level, msg = '', meta, cb) ->
 
     cb null, true if @silent
     subject = "[#{level}] #{msg[0..50]}"
-    text    =
-      """
-      #{msg}
-      ---
-      #{util.inspect meta, null, 5}
-      """
+    text    = msg
+    msg    += "---\n#{util.inspect meta, null, 5}" if meta
 
-    smtpTransport.sendMail {@from, @to, subject, text}, cb
+    @smtpTransport.sendMail {@from, @to, subject, text}, cb
