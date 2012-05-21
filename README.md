@@ -23,16 +23,12 @@ var winston = require('winston')
 
 winston.loggers.add('logger', {
   email: {
-    from   : 'xxx'
-    to     : 'xxx'
-    service: 'Gmail'
-    auth   :
-      user: 'xxx'
-      pass: 'xxx'
-
+    from   : 'xxx',
+    to     : 'xxx',
+    service: 'Gmail',
+    auth   : { user: 'xxx', pass: 'xxx'}
   }
   // other transports
-
 });
 
 logger = winston.loggers.get('logger');
