@@ -24,6 +24,6 @@ class winston.transports.Email extends winston.Transport
     cb null, true if @silent
     subject = "[#{level}] #{msg[0..50]}"
     text    = msg
-    msg    += "---\n#{util.inspect meta, null, 5}" if meta
+    text   += "---\n#{util.inspect meta, null, 5}" if meta
 
     @smtpTransport.sendMail {@from, @to, subject, text}, cb
