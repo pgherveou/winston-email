@@ -2,7 +2,7 @@ util       = require 'util'
 winston    = require 'winston'
 nodemailer = require 'nodemailer'
 
-
+module.exports =
 class winston.transports.Email extends winston.Transport
 
   name: 'email'
