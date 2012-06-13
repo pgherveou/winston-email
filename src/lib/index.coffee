@@ -22,8 +22,8 @@ class winston.transports.Email extends winston.Transport
   log: (level, msg = '', meta, cb) ->
 
     cb null, true if @silent
-    subject = "[#{level}] #{msg[0..50]}"
-    text    = msg
+    text    = msg.toString()
+    subject = "[#{level}] #{text[0..50]}"
     text   += "\n---\n#{util.inspect meta, null, 5}" if meta
 
     @smtpTransport.sendMail {@from, @to, subject, text}, cb
