@@ -12,6 +12,8 @@ class winston.transports.Email extends winston.Transport
     {@to, @from} = options
     throw new Error "Winston-email Specify to and from" unless @to and @from
 
+    @tags = options.tags.map((t) => "[#{t}] ").join('') if options.tags
+
     @smtpTransport = nodemailer.createTransport 'SMTP',
         service: options.service
         auth:
@@ -23,7 +25,7 @@ class winston.transports.Email extends winston.Transport
 
     cb null, true if @silent
     text    = msg.toString()
-    subject = "[#{level}] #{text[0..50]}"
+    subject = "#{@tags || ''}[#{level}] #{text[0..50]}"
     text   += "\n---\n#{util.inspect meta, null, 5}" if meta
 
     @smtpTransport.sendMail {@from, @to, subject, text}, cb

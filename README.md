@@ -26,7 +26,8 @@ winston.loggers.add('logger', {
     from   : 'xxx',
     to     : 'xxx',
     service: 'Gmail',
-    auth   : { user: 'xxx', pass: 'xxx'}
+    auth   : { user: 'xxx', pass: 'xxx'},
+    tags   : ['your app'] //optional tags for the subject
   }
   // other transports
 });
