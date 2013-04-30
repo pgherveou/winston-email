@@ -18,8 +18,8 @@ add an email option to your logger
 
 ```javascript
 
-var winston = require('winston')
-  , require('winston-email');
+var winston = require('winston');
+require('winston-email');
 
 winston.loggers.add('logger', {
   email: {
@@ -36,8 +36,6 @@ logger = winston.loggers.get('logger');
 logger.info("info msg", {title:'optional title'});
 
 ```
-
-
 
 [1]: https://github.com/andris9/nodemailer   "nodemailer"
 
