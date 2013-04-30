@@ -37,5 +37,12 @@ logger.info("info msg", {title:'optional title'});
 
 ```
 
+test
+----
+
+```
+FROM=<youremail> TO=<youremail> USER=<youremail> PASS=<your pwd> node test
+```
+
 [1]: https://github.com/andris9/nodemailer   "nodemailer"
 

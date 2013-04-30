@@ -21,4 +21,6 @@ winston.loggers.add('logger', {
 });
 
 logger = winston.loggers.get('logger');
-logger.info("info msg", {title:'optional title'});
+logger.info("info msg", {title:'optional title'}, function () {
+  console.log(arguments);
+});
