@@ -2,7 +2,7 @@
   "name": "winston-email",
   "description": "An email transport for winston",
   "author": "Pierre Herveou <pgherveou@gmail.com>",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "repository": {
     "type": "git",
     "url": "git://github.com/pgherveou/winston-email"
