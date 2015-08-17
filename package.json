@@ -9,7 +9,7 @@
   },
   "keywords": ["logging", "winston", "email"],
   "dependencies": {
-    "nodemailer": "*"
+    "nodemailer": "1.x"
   },
   "peerDependencies": {
     "winston"   : "*"
